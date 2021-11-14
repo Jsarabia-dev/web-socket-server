@@ -2,7 +2,7 @@
 /* eslint-disable global-require */
 const express = require('express');
 const cors = require('cors');
-// const fileUpload = require('express-fileupload');
+const { socketController } = require('../sockets/controller');
 
 class Server {
   constructor() {
@@ -44,13 +44,7 @@ class Server {
   routes() {}
 
   sockets() {
-    this.io.on('connection', (client) => {
-      // client.on('event', data => { /* … */ });
-      client.on('disconnect', () => {
-        console.log('Client disconnected');
-      });
-      console.log('Client connected', client.id);
-    });
+    this.io.on('connection', socketController );
   }
 
   listen() {
