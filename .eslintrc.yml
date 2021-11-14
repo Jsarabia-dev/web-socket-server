@@ -1,0 +1,13 @@
+env:
+  browser: true
+  commonjs: true
+  es2021: true
+extends:
+  - google
+parserOptions:
+  ecmaVersion: 13
+rules: 
+  "require-jsdoc" : 0
+  "linebreak-style": 0
+  "no-multi-spaces": 0
+
